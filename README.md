@@ -14,3 +14,6 @@ Create realtime database
 https://console.firebase.google.com/u/1/project/wcarle-firechat/database
 Create realtime database
 Start in test mode
+
+
+npm install -g firebase-tools

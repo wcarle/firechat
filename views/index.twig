@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>20 Minute Firechat!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css">
+  <title>Firechat!</title>
 
 </head>
 <body>
-  <div class="container">
-    <h1>20 Minute Firechat!</h1>
+  <div class="container pt-5">
+    <h1>Firechat!</h1>
     <div class="row">
-      <div class="col-lg">
+      <div class="col-sm">
         <div class="form-group">
-          <label for="message">Type Your message</label>
-          <input type="text" class="form-control form-control-lg" id="message" placeholder="Say something!">
+          <form id="form-message" autocomplete="off">
+            <label for="message">Type Your message</label>
+            <input type="text" class="form-control form-control-lg" id="message" placeholder="Say something!">
+          </form>
         </div>
-        <ul class="list-group">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Morbi leo risus</li>
-          <li class="list-group-item">Porta ac consectetur ac</li>
-          <li class="list-group-item">Vestibulum at eros</li>
+        <ul id="messages-list" class="list-group">
         </ul>
       </div>
     </div>
