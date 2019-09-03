@@ -1,7 +1,7 @@
 (function() {
     // Set the configuration for your app
     const config = {
-        apiKey: "apiKey",
+        apiKey: "AIzaSyCv4hm4vEZweE5B30tgT2-zVyxAIMro0eA",
         authDomain: "wcarle-firechat.firebaseapp.com",
         databaseURL: "https://wcarle-firechat.firebaseio.com",
     };
