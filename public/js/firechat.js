@@ -11,24 +11,56 @@
 
     var username = localStorage.getItem('user');
 
-    if (!username) {
-        username = prompt('What\'s your name?');
-        username = username ? username : 'anonymous';
-        localStorage.setItem('user', username);
-    }
-
     var user = {
-        name: username
+        name: null
     };
 
     // Get a reference to the database service
     var database = firebase.database();
 
     var messages = database.ref('messages');
+    var users = database.ref('users');
+    var userRef = null;
 
     var input = document.getElementById('message');
     var form = document.getElementById('form-message');
     var messagesList = document.getElementById('messages-list');
+
+
+    function ready() {
+        input.disabled = false;
+    }
+
+    function login() {
+        firebase.auth().onAuthStateChanged(function(val) {
+            if (val) {
+                user.uid = val.uid;
+                userRef = users.child(user.uid);
+                userRef.once('value', function(data){
+                    if (data.val() === null) {
+                        user.name = prompt("What's your name?");
+                        users.child(user.uid).set(user);
+                    }
+                    else {
+                        user = data.val();
+                        if (!user.name) {
+                            user.name = prompt("What's your name?");
+                            users.child(user.uid).set(user);
+                        }
+                    }
+                    ready();
+                });
+            }
+            else {
+                // User logout
+            }
+        });
+        firebase.auth().signInAnonymously().catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode + ': ' + error.message);
+        });
+    }
 
     form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -59,5 +91,7 @@
     messages.limitToLast(MESSAGE_COUNT).on('child_removed', function(data){
         document.getElementById(data.key).remove();
     });
+
+    login();
 
 })();
