@@ -13,7 +13,7 @@ Login: `gcloud auth login`
 ## Get Code
 `git clone git@github.com:wcarle/firechat.git`
 
-##Create firebase project
+## Create firebase project
 
 Create the project (use the project you created above): https://console.firebase.google.com/u/1/
 
