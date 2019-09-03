@@ -1,19 +1,28 @@
-Tutorial
+# Firechat Tutorial
 
-Create Project
-gcloud projects create [YOUR_PROJECT_ID] --set-as-default
-gcloud app create --project=[YOUR_PROJECT_ID]
+## Prereqs
+Install npm: `brew install node`
+Install firebase tools: `npm install -g firebase-tools`
+Install gcloud tools: https://cloud.google.com/sdk/docs/quickstart-macos
+Login: `gcloud auth login`
 
-Get Code
-git clone git@github.com:wcarle/firechat.git
+## Create Project
+`gcloud projects create [YOUR_PROJECT_ID] --set-as-default`
+`gcloud app create --project=[YOUR_PROJECT_ID]`
 
-Create firebase project
-https://console.firebase.google.com/u/1/
+## Get Code
+`git clone git@github.com:wcarle/firechat.git`
 
-Create realtime database
-https://console.firebase.google.com/u/1/project/wcarle-firechat/database
-Create realtime database
-Start in test mode
+##Create firebase project
+
+Create the project (use the project you created above): https://console.firebase.google.com/u/1/
+
+Create realtime database: https://console.firebase.google.com/u/1/project/wcarle-firechat/database
+ - Start in test mode
 
 
-npm install -g firebase-tools
+## Run it:
+`npm start`
+
+## Deploy it:
+`gcloud app deploy app.yaml --project [YOUR_PROJECT_ID]`
