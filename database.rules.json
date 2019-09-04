@@ -1,0 +1,14 @@
+{
+  "rules": {
+    ".read": true,
+    "messages": {
+        ".write": "auth.uid != null",
+        ".validate": "newData.val().length < 256"
+    },
+    "users": {
+      "$uid": {
+        ".write": "auth.uid == $uid",
+      }
+    }
+  }
+}

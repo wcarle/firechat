@@ -91,6 +91,10 @@
     messages.limitToLast(MESSAGE_COUNT).on('child_removed', function(data){
         document.getElementById(data.key).remove();
     });
+    messages.limitToLast(MESSAGE_COUNT).on('child_changed', function(data){
+        var val = data.val();
+        document.getElementById(data.key).innerHTML = '<span class="badge badge-primary">' + val.user + '</span> - ' + val.text;;
+    });
 
     login();
 

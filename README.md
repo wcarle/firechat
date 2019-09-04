@@ -20,9 +20,15 @@ Create the project (use the project you created above): https://console.firebase
 Create realtime database: https://console.firebase.google.com/u/1/project/wcarle-firechat/database
  - Start in test mode
 
+## Setup:
+`npm install`
+`cd functions`
+`npm install`
+`cd ..`
 
 ## Run it:
 `npm start`
 
 ## Deploy it:
+`firebase deploy`
 `gcloud app deploy app.yaml --project [YOUR_PROJECT_ID]`
