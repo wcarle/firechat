@@ -4,6 +4,9 @@ const express = require('express');
 
 const app = express();
 
+/**
+ * Homepage route to our chat app
+ */
 app.get('/', (req, res) => {
   res
     .status(200)
