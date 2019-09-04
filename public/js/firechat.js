@@ -82,10 +82,7 @@
     // Listen to firebase list add and remove events
     messages.limitToLast(MESSAGE_COUNT).on('child_added', function (data, prev) {
         var val = data.val();
-        var newMessage = document.createElement('li');
-        newMessage.innerHTML = '<span class="badge badge-primary">' + val.user + '</span> - ' + val.text;
-        newMessage.className = 'list-group-item';
-        newMessage.id = data.key;
+        var newMessage = messageTemplate(data.key, val.user, val.text)
         messagesList.prepend(newMessage);
     });
     messages.limitToLast(MESSAGE_COUNT).on('child_removed', function(data){
@@ -95,6 +92,20 @@
         var val = data.val();
         document.getElementById(data.key).innerHTML = '<span class="badge badge-primary">' + val.user + '</span> - ' + val.text;;
     });
+
+    function messageTemplate(key, user, text) {
+        var newMessage = document.createElement('li');
+        var badge = document.createElement('span')
+        badge.className = 'badge badge-primary';
+        badge.innerText = user;
+        var messageText = document.createElement('span');
+        messageText.innerText = ' - ' + text;
+        newMessage.appendChild(badge);
+        newMessage.appendChild(messageText);
+        newMessage.className = 'list-group-item';
+        newMessage.id = key;
+        return newMessage;
+    }
 
     login();
 
