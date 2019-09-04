@@ -3,7 +3,11 @@
     ".read": true,
     "messages": {
         ".write": "auth.uid != null",
-        ".validate": "newData.val().length < 256"
+        "$id": {
+          "text": {
+                ".validate": "newData.val().length < 256"
+          }
+        }
     },
     "users": {
       "$uid": {
