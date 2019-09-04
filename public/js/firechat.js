@@ -2,9 +2,9 @@
     // Set the configuration for our app
     // We got these values from the firebase project at https://console.firebase.google.com
     const config = {
-        apiKey: "AIzaSyCv4hm4vEZweE5B30tgT2-zVyxAIMro0eA",
-        authDomain: "wcarle-firechat.firebaseapp.com",
-        databaseURL: "https://wcarle-firechat.firebaseio.com",
+        apiKey: "AIzaSyASitjvY4VZEDdv8YmHM9EAH7HTBYdI-NE",
+        authDomain: "wcarle-test1.firebaseapp.com",
+        databaseURL: "https://wcarle-test1.firebaseio.com",
     };
     firebase.initializeApp(config);
 
