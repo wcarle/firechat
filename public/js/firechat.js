@@ -82,7 +82,7 @@
     // Listen to firebase list add and remove events
     messages.limitToLast(MESSAGE_COUNT).on('child_added', function (data, prev) {
         var val = data.val();
-        var newMessage = messageTemplate(data.key, val.user, val.text)
+        var newMessage = messageTemplate(data.key, val.user, val.text);
         messagesList.prepend(newMessage);
     });
     messages.limitToLast(MESSAGE_COUNT).on('child_removed', function(data){
@@ -90,7 +90,7 @@
     });
     messages.limitToLast(MESSAGE_COUNT).on('child_changed', function(data){
         var val = data.val();
-        document.getElementById(data.key).innerHTML = '<span class="badge badge-primary">' + val.user + '</span> - ' + val.text;;
+        document.getElementById(data.key).innerHTML = messageTemplate(data.key, val.user, val.text).innerHTML;
     });
 
     function messageTemplate(key, user, text) {
